@@ -11,4 +11,28 @@ public class Square : MonoBehaviour
     //End
     public static int e;
     public static bool placedEnd;
+
+    //Go
+    public static bool stop;
+    private bool canGo;
+    public static int value;
+    public static float time = 1f;
+
+    private void Update()
+    {
+        if (!stop && placedStart && !canGo)
+        {
+            StartCoroutine(Count());
+        }
+    }
+
+    IEnumerator Count()
+    {
+        canGo = true;
+
+        yield return new WaitForSeconds(time);
+        value++;
+
+        canGo = false;
+    }
 }

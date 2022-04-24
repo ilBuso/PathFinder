@@ -14,7 +14,7 @@ public class Click : MonoBehaviour
     private int e;
     private bool placedEnd;
 
-    private void Update()
+    void Update()
     {
         //Assign
         w = Square.w;
@@ -32,12 +32,16 @@ public class Click : MonoBehaviour
             if (spriteRenderer.color == Color.white)
             {
                 spriteRenderer.color = Color.black;
+
+                transform.gameObject.tag = "Wall";
             }
             else
             {
                 if (spriteRenderer.color == Color.black)
                 {
                     spriteRenderer.color = Color.white;
+
+                    transform.gameObject.tag = "Untagged";
                 }
             }
         }
@@ -50,6 +54,7 @@ public class Click : MonoBehaviour
             {
                 spriteRenderer.color = Color.yellow;
                 Square.w++;
+                transform.gameObject.tag = "Start";
 
                 Square.placedStart = !placedStart;
             }
@@ -59,6 +64,7 @@ public class Click : MonoBehaviour
                 {
                     spriteRenderer.color = Color.white;
                     Square.w--;
+                    transform.gameObject.tag = "Untagged";
 
                     Square.placedStart = !placedStart;
                 }
@@ -73,6 +79,7 @@ public class Click : MonoBehaviour
             {
                 spriteRenderer.color = Color.red;
                 Square.e++;
+                transform.gameObject.tag = "End";
 
                 Square.placedEnd = !placedEnd;
             }
@@ -82,6 +89,7 @@ public class Click : MonoBehaviour
                 {
                     spriteRenderer.color = Color.white;
                     Square.e--;
+                    transform.gameObject.tag = "Untagged";
 
                     Square.placedEnd = !placedEnd;
                 }
