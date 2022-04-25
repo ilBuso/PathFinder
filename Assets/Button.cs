@@ -6,8 +6,8 @@ public class Button : MonoBehaviour
 {
     public static bool start = false;
 
-    public void Start()
+    /*public void Start()
     {
         start = !start;
-    }
+    }*/
 }

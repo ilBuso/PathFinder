@@ -13,10 +13,13 @@ public class Square : MonoBehaviour
     public static bool placedEnd;
 
     //Go
+    public static float time = .2f;
     public static bool stop;
+
     private bool canGo;
-    public static int value;
-    public static float time = 1f;
+
+    public static int value = 1;
+    
 
     private void Update()
     {
