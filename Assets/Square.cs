@@ -19,6 +19,7 @@ public class Square : MonoBehaviour
     private bool canGo;
 
     public static int value = 1;
+    public static int i;
     
 
     private void Update()
@@ -35,6 +36,8 @@ public class Square : MonoBehaviour
 
         yield return new WaitForSeconds(time);
         value++;
+
+        i = value;
 
         canGo = false;
     }

@@ -6,6 +6,7 @@ public class PathFinder : MonoBehaviour
 {
     private bool stop;
     public int value;
+    private int n = 2;
 
     void Start()
     {
@@ -34,12 +35,15 @@ public class PathFinder : MonoBehaviour
                     {
                         if (hit.transform.gameObject.CompareTag("Start"))
                         {
-                            if (hit.transform.gameObject.GetComponent<PathFinder>().value == value--)
+                            if (hit.transform.gameObject.GetComponent<PathFinder>().value == Square.i - n)
                             {
+                                n++;
+                                
                                 hit.transform.gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
                                 hit.transform.gameObject.transform.tag = "End";
 
                                 gameObject.transform.tag = "Player";
+
                             }
                         }
                     }
