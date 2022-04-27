@@ -20,6 +20,7 @@ public class Square : MonoBehaviour
 
     public static int value = 1;
     public static int i;
+    public static int n = 2;
     
 
     private void Update()
